@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dave Matthews in Tokyo – Predicted Setlist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --bg:#EDF0FA; --bg2:#E2E7F6; --card:#FFFFFF; --card2:#F6F8FD;
+  --ink:#141B2D; --muted:#5B6685; --track:#D5DBEE;
+  --sun:#F0457A; --halo:#FF8A3D; --orange:#E86B1C; --pink:#E23D72; --teal:#14A887; --yellow:#D99A00;
+  --star:#C98A00; --line:#D9DFF0; --subtitle:#A86400;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --bg:#141B2D; --bg2:#10162A; --card:#1E2840; --card2:#232E49;
+    --ink:#FFFFFF; --muted:#9AA6C4; --track:#33405F;
+    --sun:#FF5C8A; --halo:#FF8A3D; --orange:#FF8A3D; --pink:#FF5C8A; --teal:#3DDCB4; --yellow:#FFD166;
+    --star:#FFD166; --line:#2C3756; --subtitle:#FFD166;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --bg:#141B2D; --bg2:#10162A; --card:#1E2840; --card2:#232E49;
+  --ink:#FFFFFF; --muted:#9AA6C4; --track:#33405F;
+  --sun:#FF5C8A; --halo:#FF8A3D; --orange:#FF8A3D; --pink:#FF5C8A; --teal:#3DDCB4; --yellow:#FFD166;
+  --star:#FFD166; --line:#2C3756; --subtitle:#FFD166;
+}
+:root{ box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); }
+*,*::before,*::after{ box-sizing:inherit; }
+html{ scroll-padding-top:env(safe-area-inset-top,0px); }
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size:16px; line-height:1.45; -webkit-font-smoothing:antialiased;
+}
+main{ max-width:640px; margin:0 auto; padding:0 18px 48px; }
+
+/* ---------- hero ---------- */
+.hero{ position:relative; padding:40px 0 28px; overflow:hidden; }
+.stars{ position:absolute; inset:0; pointer-events:none; }
+.stars i{ position:absolute; width:2px; height:2px; border-radius:50%; background:var(--ink); opacity:.35; }
+.sun{ position:absolute; right:-34px; top:-6px; width:110px; height:110px; border-radius:50%;
+  background:var(--sun); box-shadow:0 0 0 16px color-mix(in srgb, var(--halo) 22%, transparent); }
+.hero > *:not(.stars):not(.sun){ position:relative; }
+.kicker{ margin:0 0 4px; padding-right:70px; color:var(--orange); font-weight:600; font-size:1rem; }
+h1{ margin:0; font-weight:800; font-size:clamp(2.4rem, 11vw, 3.6rem); line-height:.95; letter-spacing:-.02em; max-width:9ch; }
+.sub{ margin:12px 0 0; font-size:1.25rem; font-weight:600; color:var(--subtitle); }
+.showcard{ margin-top:22px; background:var(--card); border-radius:16px; padding:14px 16px; display:grid; grid-template-columns:1fr auto; gap:4px 12px; border:1px solid var(--line); }
+.showcard .venue{ font-weight:600; }
+.showcard .when{ color:var(--muted); font-size:.95rem; }
+.showcard .times{ grid-row:1 / span 2; grid-column:2; text-align:right; font-size:.9rem; color:var(--muted); align-self:center; }
+.showcard .times b{ color:var(--ink); font-weight:600; }
+
+/* ---------- section headings ---------- */
+h2{ font-size:1.5rem; font-weight:800; margin:34px 0 4px; letter-spacing:-.01em; }
+.note{ margin:0 0 14px; color:var(--muted); font-size:.92rem; }
+
+/* ---------- setlist ---------- */
+ol.set{ list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+.row{ display:grid; grid-template-columns:34px 1fr auto; gap:2px 12px; align-items:center;
+  background:var(--card); border-radius:14px; padding:12px 14px; border:1px solid var(--line); }
+.row:nth-child(even){ background:var(--card2); }
+.pick{ grid-row:1 / span 3; width:30px; height:32px; display:grid; place-items:center;
+  background:var(--c); color:#141B2D; font-weight:800; font-size:.85rem;
+  clip-path:path("M15 0 C26 0 30 4 30 10 C30 18 22 27 15 32 C8 27 0 18 0 10 C0 4 4 0 15 0 Z"); padding-bottom:6px; }
+.title{ font-weight:600; font-size:1.05rem; line-height:1.2; }
+.title .fav{ color:var(--star); margin-left:4px; font-size:.85em; }
+a.title{ color:inherit; text-decoration:none; }
+a.title .sp{ display:inline-grid; place-items:center; width:18px; height:18px; margin-left:6px; border-radius:50%; background:var(--teal); color:#141B2D; font-size:.55rem; vertical-align:2px; padding-left:1px; }
+a.title:hover, a.title:focus-visible{ text-decoration:underline; text-underline-offset:3px; }
+.playall{ display:inline-flex; align-items:center; gap:8px; margin:0 0 16px; padding:10px 16px; border-radius:999px; background:var(--teal); color:#141B2D; font-weight:600; text-decoration:none; }
+.playall:hover{ filter:brightness(1.05); }
+.album{ grid-column:2; color:var(--muted); font-size:.85rem; }
+.plays{ grid-row:1 / span 2; grid-column:3; text-align:right; }
+.plays b{ display:block; font-size:1.2rem; font-weight:800; line-height:1; }
+.plays span{ font-size:.75rem; color:var(--muted); }
+.pos{ grid-column:2 / span 2; display:flex; align-items:center; gap:10px; margin-top:6px; }
+.track{ position:relative; flex:1; height:4px; border-radius:2px; background:var(--track); }
+.track::after{ content:""; position:absolute; top:50%; left:var(--p); width:12px; height:12px; border-radius:50%;
+  background:var(--c); transform:translate(-50%,-50%); }
+.pos output{ font-weight:600; font-size:.85rem; min-width:3ch; text-align:right; }
+.ends{ display:flex; justify-content:space-between; color:var(--muted); font-size:.75rem; margin:10px 50px 0 60px; }
+
+/* ---------- wildcards ---------- */
+.wild{ display:flex; flex-wrap:wrap; gap:8px; padding:0; margin:0; list-style:none; }
+.wild li{ background:var(--card); border:1px dashed var(--line); border-radius:12px; padding:9px 12px; }
+.wild b{ font-weight:600; display:block; line-height:1.2; }
+.wild span{ color:var(--muted); font-size:.8rem; }
+.wild a{ color:inherit; text-decoration:none; display:block; }
+.wild a:hover b, .wild a:focus-visible b{ text-decoration:underline; text-underline-offset:3px; }
+.wild .sp{ display:inline-grid; place-items:center; width:16px; height:16px; margin-left:6px; border-radius:50%; background:var(--teal); color:#141B2D; font-size:.5rem; vertical-align:2px; padding-left:1px; }
+
+/* ---------- dates ---------- */
+.dates{ list-style:none; padding:0; margin:0; display:grid; gap:8px; }
+.dates li{ display:grid; grid-template-columns:62px 1fr auto; gap:0 12px; align-items:center;
+  background:var(--card); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+.dates li.here{ border:2px solid var(--sun); }
+.day{ text-align:center; line-height:1.05; }
+.day b{ display:block; font-size:1.5rem; font-weight:800; }
+.day span{ font-size:.75rem; color:var(--muted); }
+.city{ font-weight:600; }
+.hall{ color:var(--muted); font-size:.85rem; }
+.t{ text-align:right; font-size:.85rem; color:var(--muted); }
+.t b{ color:var(--ink); font-weight:600; }
+
+footer{ margin-top:36px; color:var(--muted); font-size:.8rem; }
+.map{ margin-top:8px; }
+.map figure{ margin:0 0 14px; }
+.map svg{ display:block; width:100%; height:auto; }
+.map figcaption{ color:var(--muted); font-size:.75rem; margin-top:6px; }
+.m-bg{ fill:var(--card); stroke:var(--line); }
+.m-road{ stroke:var(--track); stroke-width:6; stroke-linecap:round; }
+.m-park{ fill:color-mix(in srgb, var(--teal) 28%, transparent); }
+.m-rail{ stroke:var(--muted); stroke-width:4; stroke-dasharray:14 6; }
+.m-stn{ fill:var(--ink); }
+.m-stn-t{ fill:var(--bg); font-size:12px; font-weight:600; }
+.m-walk{ fill:none; stroke:var(--orange); stroke-width:3; stroke-dasharray:6 5; stroke-linecap:round; stroke-linejoin:round; }
+.m-exit{ fill:var(--orange); }
+.m-halo{ fill:color-mix(in srgb, var(--halo) 25%, transparent); }
+.m-pin{ fill:var(--sun); }
+.m-pin-t{ fill:#fff; font-size:15px; font-weight:800; }
+.m-lbl{ fill:var(--ink); font-size:12.5px; font-weight:600; }
+.m-small{ fill:var(--muted); font-size:11px; }
+.maplink{ display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:999px; background:var(--sun); color:#fff; font-weight:600; text-decoration:none; }
+.maplink:hover{ filter:brightness(1.05); }
+footer p{ margin:0 0 6px; }
+
+.theme-toggle{ position:fixed; top:calc(env(safe-area-inset-top,0px) + 12px); right:12px; z-index:20; width:42px; height:42px; border-radius:50%; border:1px solid var(--line); background:var(--card); color:var(--ink); font-size:1.15rem; line-height:1; display:grid; place-items:center; cursor:pointer; box-shadow:0 2px 10px rgba(0,0,0,.25); padding:0; }
+.theme-toggle:hover{ filter:brightness(1.08); }
+:focus-visible{ outline:2px solid var(--orange); outline-offset:2px; }
+@media (min-width:560px){ .sun{ width:150px; height:150px; right:10px; top:22px; } }
+</style>
+</head>
+<body>
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">☾</button>
+<script>
+(function(){
+  var root=document.documentElement, mq=window.matchMedia('(prefers-color-scheme: dark)');
+  try{ var s=localStorage.getItem('dm-theme'); if(s==='dark'||s==='light') root.setAttribute('data-theme',s); }catch(e){}
+  var tg=document.getElementById('themeToggle');
+  function current(){ return root.getAttribute('data-theme') || (mq.matches?'dark':'light'); }
+  function paint(){ var d=current()==='dark'; tg.textContent=d?'☀':'☾'; tg.setAttribute('aria-label', d?'Switch to light mode':'Switch to dark mode'); }
+  paint();
+  if(mq.addEventListener) mq.addEventListener('change',paint);
+  tg.addEventListener('click',function(){ var n=current()==='dark'?'light':'dark'; root.setAttribute('data-theme',n); try{ localStorage.setItem('dm-theme',n); }catch(e){} paint(); });
+})();
+</script>
+<main>
+
+<header class="hero">
+  <div class="stars" id="stars" aria-hidden="true"></div>
+  <div class="sun" aria-hidden="true"></div>
+  <p class="kicker">An acoustic evening with</p>
+  <h1>Dave Matthews</h1>
+  <p class="sub">The predicted Tokyo setlist</p>
+  <div class="showcard">
+    <span class="venue">Sumida Triphony Hall, Tokyo</span>
+    <span class="when">Wednesday 6 January 2027</span>
+    <span class="times">Doors <b>6pm</b><br>Show <b>7pm</b></span>
+  </div>
+</header>
+
+<section aria-labelledby="set-h">
+  <h2 id="set-h">The setlist</h2>
+  <p class="note">His 20 most-played solo songs, in the order they usually come up. The number is how many times each has been logged in a solo set; ★ marks 40+ plays. Tap a song to hear the original recording on Spotify.</p>
+  <a class="playall" href="https://open.spotify.com/playlist/3Q7CEvLBn6IOoMZW8VdH0v" target="_blank" rel="noopener">▶ Play the whole setlist on Spotify</a>
+  <ol class="set" id="set"></ol>
+  <div class="ends" aria-hidden="true"><span>Opener</span><span>Closer</span></div>
+</section>
+
+<section aria-labelledby="wild-h">
+  <h2 id="wild-h">Wildcards</h2>
+  <p class="note">Songs just outside the top 20 that could easily sneak in, ordered by solo plays. Tap one to hear it on Spotify.</p>
+  <ul class="wild" id="wild"></ul>
+</section>
+
+<footer>
+  <p>Play counts from setlist.fm’s logged Dave Matthews solo setlists. Set positions averaged from setlist.fm’s solo average setlists for 2018, 2022, 2023, 2025 and 2026, plus Hanover Grand, London, 12 November 2001.</p>
+  <p>A Titanic corp exclusive fan prediction</p>
+</footer>
+
+<section aria-labelledby="map-h" class="map">
+  <h2 id="map-h">Getting to the venue</h2>
+  <p class="note">Sumida Triphony Hall, 1-2-3 Kinshi, Sumida City, Tokyo. About 5 minutes on foot from the North Exit of JR Kinshicho Station (Sobu Line) or Exit 3 of the Hanzomon Line station.</p>
+  <figure>
+    <svg viewBox="0 0 360 240" role="img" aria-label="Simple map: walk north from Kinshicho Station’s North Exit to Sumida Triphony Hall, next to Kinshi Park">
+      <rect class="m-bg" x="0" y="0" width="360" height="240" rx="14"/>
+      <line class="m-road" x1="0" y1="140" x2="360" y2="140"/>
+      <line class="m-road" x1="230" y1="0" x2="230" y2="240"/>
+      <line class="m-road" x1="60" y1="0" x2="60" y2="240"/>
+      <rect class="m-park" x="250" y="36" width="92" height="84" rx="10"/>
+      <text class="m-lbl" x="296" y="82" text-anchor="middle">Kinshi Park</text>
+      <line class="m-rail" x1="0" y1="196" x2="360" y2="196"/>
+      <text class="m-small" x="12" y="222">JR Sobu Line</text>
+      <rect class="m-stn" x="186" y="182" width="112" height="28" rx="7"/>
+      <text class="m-stn-t" x="242" y="200" text-anchor="middle">Kinshicho Stn</text>
+      <polyline class="m-walk" points="230,182 230,140 150,140 136,104"/>
+      <circle class="m-exit" cx="230" cy="182" r="5"/>
+      <text class="m-small" x="238" y="174">North Exit</text>
+      <text class="m-small" x="150" y="132">~5 min walk</text>
+      <circle class="m-halo" cx="130" cy="86" r="24"/>
+      <circle class="m-pin" cx="130" cy="86" r="15"/>
+      <text class="m-pin-t" x="130" y="91" text-anchor="middle">♪</text>
+      <text class="m-lbl" x="130" y="40" text-anchor="middle">Sumida Triphony Hall</text>
+      <text class="m-small" x="338" y="22" text-anchor="end">N ↑</text>
+    </svg>
+    <figcaption>Not to scale.</figcaption>
+  </figure>
+  <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Sumida%20Triphony%20Hall%2C%201-2-3%20Kinshi%2C%20Sumida%20City%2C%20Tokyo" target="_blank" rel="noopener">Open in Google Maps</a>
+</section>
+
+</main>
+<script>
+const songs = [
+  ["Bartender",49,13,"Busted Stuff, 2002","4b08ATxMr59xjM8GePxlwq"],
+  ["Grace Is Gone",20,26,"Busted Stuff, 2002","7qn5jYvZmq17rPMt6z92vL"],
+  ["Crash Into Me",21,30,"Crash, 1996","77pOyJP8PK4XoUr80TqJjr"],
+  ["Samurai Cop (Oh Joy Begin)",21,30,"Come Tomorrow, 2018","16OP0yGQlfoUfKis8HjB44"],
+  ["Save Me",44,30,"Some Devil, 2003","6akPgwQRR8KsyCeseRSXJ3"],
+  ["So Damn Lucky",51,30,"Some Devil, 2003","3C2tjB10LVr7i6foplH0jJ"],
+  ["Everyday",26,32,"Everyday, 2001","7MfQyndzk9R3pRRl5eGnNV"],
+  ["Mercy",25,34,"Away from the World, 2012","2tstd88lmYd8sMO7BuvwRI"],
+  ["Where Are You Going",24,41,"Busted Stuff, 2002","15MhLnkZLJe4Z2tLISwe5k"],
+  ["Don’t Drink the Water",53,43,"Before These Crowded Streets, 1998","3HWGGf3ZEfvqmzWyppxhqf"],
+  ["Satellite",26,48,"Under the Table and Dreaming, 1994","5FUnxIKnKlX5KMZKz5kQYt"],
+  ["Crush",49,53,"Before These Crowded Streets, 1998","2wgOaT8peyYLOl9EPWiFNB"],
+  ["Stay or Leave",34,63,"Some Devil, 2003","1y7baLUzUGyqSGc7p7Ww9f"],
+  ["Grey Street",24,69,"Busted Stuff, 2002","6CJOSHb0RyHMiySHqfLMoN"],
+  ["Dancing Nancies",33,74,"Under the Table and Dreaming, 1994","62uEr6p6ACwKUUtGm0SFwG"],
+  ["All Along the Watchtower",21,74,"Recently EP, 1994 (Bob Dylan cover)","3OWmY9S7VOdTPXyCyQhwz8"],
+  ["Gravedigger",39,79,"Some Devil, 2003","3P0sDX8U2Aq95IY0NueSvE"],
+  ["Ants Marching",31,87,"Under the Table and Dreaming, 1994","5S9Os6xwdncvFEhj0RJRHv"],
+  ["You & Me",20,93,"Big Whiskey and the GrooGrux King, 2009","2haoFajdq2VFBj8xTfdV7N"],
+  ["Some Devil",19,96,"Some Devil, 2003","71VzBszWYcbsss9ESiVC22"]
+];
+const wild = [
+  ["Rye Whiskey","Europe 2009 (live), Tex Ritter cover",17,"5z6RAXFKthxXz8wINzZMrQ"],
+  ["Singing From the Windows","Walk Around the Moon, 2023",17,"5utnQdxcNMx8iavDTwV4V0"],
+  ["#41","Crash, 1996",15,"3ITGICyYHC13EkB7efdr8K"],
+  ["Oh","Some Devil, 2003",14,"3fQfgJDQRLuuarql9UKoGd"],
+  ["The Stone","Before These Crowded Streets, 1998",14,"2BGQUzDfBJl01GhqiCV8q4"],
+  ["Funny How Time Slips Away","Willie Nelson 90 (live), 2024, Willie Nelson cover",13,"2A04jMtMXxKl6h3xMTe8cT"],
+  ["I’ll Back You Up","Remember Two Things (live), 1993",13,"6qazxrDDPp7C2cGTou01Ti"],
+  ["The Space Between","Everyday, 2001",12,"2zj1zujNxjBMBdfkm5uY2o"],
+  ["Walk Around the Moon","Walk Around the Moon, 2023",4,"16GyXziacLA8BQXZZHq485"]
+];
+const cols = ["var(--orange)","var(--pink)","var(--teal)","var(--yellow)"];
+const set = document.getElementById("set");
+songs.forEach(([t,p,pos,alb,id],i)=>{
+  const li = document.createElement("li");
+  li.className = "row";
+  li.style.setProperty("--c", cols[i%4]);
+  li.style.setProperty("--p", pos+"%");
+  li.innerHTML = `
+    <div class="pick" aria-hidden="true">${i+1}</div>
+    <a class="title" href="https://open.spotify.com/track/${id}" target="_blank" rel="noopener">${t}${p>=40?'<span class="fav" title="40+ solo plays">★</span>':''}<span class="sp" aria-label="Play on Spotify">▶</span></a>
+    <div class="plays"><b>${p}</b><span>plays</span></div>
+    <div class="album">${alb}</div>
+    <div class="pos"><div class="track" role="img" aria-label="Usually ${pos}% of the way through the set"></div><output>${pos}%</output></div>`;
+  set.appendChild(li);
+});
+const w = document.getElementById("wild");
+wild.forEach(([t,a,p,id])=>{
+  const li = document.createElement("li");
+  li.innerHTML = `<a href="https://open.spotify.com/track/${id}" target="_blank" rel="noopener"><b>${t}<span class="sp" aria-label="Play on Spotify">▶</span></b><span>${a}. ${p} solo plays</span></a>`;
+  w.appendChild(li);
+});
+// stars
+const s = document.getElementById("stars");
+let seed = 7; const rnd = ()=> (seed = (seed*9301+49297)%233280)/233280;
+for(let i=0;i<60;i++){
+  const d = document.createElement("i");
+  d.style.left = (rnd()*100)+"%"; d.style.top = (rnd()*100)+"%";
+  d.style.opacity = (0.15+rnd()*0.5).toFixed(2);
+  const z = (1+rnd()*1.5).toFixed(1)+"px"; d.style.width = z; d.style.height = z;
+  s.appendChild(d);
+}
+</script>
+</body>
+</html>
