@@ -120,7 +120,11 @@ footer{ margin-top:36px; color:var(--muted); font-size:.8rem; }
 .m-rail{ stroke:var(--muted); stroke-width:4; stroke-dasharray:14 6; }
 .m-stn{ fill:var(--ink); }
 .m-stn-t{ fill:var(--bg); font-size:12px; font-weight:600; }
-.m-walk{ fill:none; stroke:var(--orange); stroke-width:3; stroke-dasharray:6 5; stroke-linecap:round; stroke-linejoin:round; }
+.m-walk{ fill:none; stroke:var(--orange); stroke-width:4; stroke-dasharray:0.1 7; stroke-linecap:round; stroke-linejoin:round; }
+.m-walk2{ fill:none; stroke:var(--teal); stroke-width:3; stroke-dasharray:10 6; stroke-linecap:round; stroke-linejoin:round; }
+.m-hotel{ fill:var(--teal); }
+.m-hotel-t{ fill:#141B2D; font-size:14px; font-weight:800; }
+.m-strong{ fill:var(--ink); font-weight:600; }
 .m-exit{ fill:var(--orange); }
 .m-halo{ fill:color-mix(in srgb, var(--halo) 25%, transparent); }
 .m-pin{ fill:var(--sun); }
@@ -129,6 +133,8 @@ footer{ margin-top:36px; color:var(--muted); font-size:.8rem; }
 .m-small{ fill:var(--muted); font-size:11px; }
 .maplink{ display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:999px; background:var(--sun); color:#fff; font-weight:600; text-decoration:none; }
 .maplink:hover{ filter:brightness(1.05); }
+.maplink{ margin:0 8px 8px 0; }
+.maplink.alt{ background:var(--teal); color:#141B2D; }
 footer p{ margin:0 0 6px; }
 
 .theme-toggle{ position:fixed; top:calc(env(safe-area-inset-top,0px) + 12px); right:12px; z-index:20; width:42px; height:42px; border-radius:50%; border:1px solid var(--line); background:var(--card); color:var(--ink); font-size:1.15rem; line-height:1; display:grid; place-items:center; cursor:pointer; box-shadow:0 2px 10px rgba(0,0,0,.25); padding:0; }
@@ -190,7 +196,7 @@ footer p{ margin:0 0 6px; }
   <h2 id="map-h">Getting to the venue</h2>
   <p class="note">Sumida Triphony Hall, 1-2-3 Kinshi, Sumida City, Tokyo. About 5 minutes on foot from the North Exit of JR Kinshicho Station (Sobu Line) or Exit 3 of the Hanzomon Line station.</p>
   <figure>
-    <svg viewBox="0 0 360 240" role="img" aria-label="Simple map: walk north from Kinshicho Station’s North Exit to Sumida Triphony Hall, next to Kinshi Park">
+    <svg viewBox="0 0 360 240" role="img" aria-label="Simple map: a dotted route from Kinshicho Station’s North Exit and a dashed route from Serendipity Kinshicho, both leading to Sumida Triphony Hall, next to Kinshi Park">
       <rect class="m-bg" x="0" y="0" width="360" height="240" rx="14"/>
       <line class="m-road" x1="0" y1="140" x2="360" y2="140"/>
       <line class="m-road" x1="230" y1="0" x2="230" y2="240"/>
@@ -205,15 +211,21 @@ footer p{ margin:0 0 6px; }
       <circle class="m-exit" cx="230" cy="182" r="5"/>
       <text class="m-small" x="238" y="174">North Exit</text>
       <text class="m-small" x="150" y="132">~5 min walk</text>
+      <polyline class="m-walk2" points="48,78 60,78 60,90 106,88"/>
+      <rect class="m-hotel" x="20" y="64" width="28" height="28" rx="7"/>
+      <text class="m-hotel-t" x="34" y="83" text-anchor="middle">H</text>
+      <text class="m-small m-strong" x="8" y="108">Serendipity</text>
+      <text class="m-small m-strong" x="8" y="121">Kinshicho</text>
       <circle class="m-halo" cx="130" cy="86" r="24"/>
       <circle class="m-pin" cx="130" cy="86" r="15"/>
       <text class="m-pin-t" x="130" y="91" text-anchor="middle">♪</text>
       <text class="m-lbl" x="130" y="40" text-anchor="middle">Sumida Triphony Hall</text>
       <text class="m-small" x="338" y="22" text-anchor="end">N ↑</text>
     </svg>
-    <figcaption>Not to scale.</figcaption>
+    <figcaption>Dotted line: from Kinshicho Station. Dashed line: from Serendipity Kinshicho. Not to scale.</figcaption>
   </figure>
   <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Sumida%20Triphony%20Hall%2C%201-2-3%20Kinshi%2C%20Sumida%20City%2C%20Tokyo" target="_blank" rel="noopener">Open in Google Maps</a>
+  <a class="maplink alt" href="https://www.google.com/maps/dir/?api=1&amp;origin=1-6-9%20Kinshi%2C%20Sumida%20City%2C%20Tokyo&amp;destination=Sumida%20Triphony%20Hall%2C%201-2-3%20Kinshi%2C%20Sumida%20City%2C%20Tokyo&amp;travelmode=walking" target="_blank" rel="noopener">Walk from Serendipity</a>
 </section>
 
 </main>
